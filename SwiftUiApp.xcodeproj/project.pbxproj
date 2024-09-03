@@ -175,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				203B2D7D2C7E128900D78033 /* APIClient.swift */,
-				203B2D7F2C7E199100D78033 /* ApiEndpoint.swift */,
 				203B2D772C7E0A4400D78033 /* URLSessionAPIClient.swift */,
+				203B2D7F2C7E199100D78033 /* ApiEndpoint.swift */,
 				203B2D7B2C7E11A700D78033 /* APIError.swift */,
 				203B2D792C7E118D00D78033 /* ErrorModel.swift */,
 				20CFB2572C87C7F700A08B66 /* MarvelEndpoint.swift */,
