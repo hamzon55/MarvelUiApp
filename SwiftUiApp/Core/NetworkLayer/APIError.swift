@@ -3,7 +3,6 @@ enum APIError: Error {
     case requestFailed
     case invalidResponse
     case decodingFailed
-    case customError(ErrorModel)
     var errorDescription: String? {
         switch self {
         case .requestFailed:
@@ -14,8 +13,6 @@ enum APIError: Error {
             return "Json failed"
         case .invalidResponse:
             return "Response type not a json"
-        case .customError(let model):
-            return model.message
         }
     }
 }

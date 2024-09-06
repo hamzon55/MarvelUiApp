@@ -11,7 +11,10 @@ import SwiftUI
 struct SwiftUiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let apiClient = URLSessionAPIClient<MarvelEndpoint>() // Create API client
+            let heroUseCase = DefaultHeroUseCase(apiClient: apiClient) // Create HeroUseCase
+            let heroViewModel = HeroViewModel(useCase: heroUseCase) // Create ViewModel
+            ContentView(viewModel: heroViewModel)
         }
     }
 }
