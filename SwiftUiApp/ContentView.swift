@@ -8,34 +8,46 @@ struct ContentView: View {
     }
     
     var body: some View {
-           NavigationView {
-               VStack {
-                   switch viewModel.state {
-                   case .idle:
-                       Text("Loading...")
-                           .onAppear {
-                               viewModel.fetchHeroes()
-                           }
-                       
-                   case .success(let heroes):
-                       List(heroes, id: \.id) { hero in
-                           Text(hero.name) 
-                       }
-                       
-                   case .failure(let error):
-                       Text("Failed to load heroes: \(error.localizedDescription)")
-                       
-                   case .error(let message):
-                       Text("Error: \(message)")
-                   }
-               }
-               .navigationTitle("Heroes")
-           }
-       }
-   }
+        NavigationView {
+            VStack {
+                switch viewModel.state {
+                case .idle:
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(2)
+                        .onAppear {
+                            viewModel.fetchHeroes()
+                        }
+                    
+                case .success(let heroes):
+                    List(heroes) { hero in
+                        HeroCell(hero: hero)
+                    }
+                    
+                case .failure(let error):
+                    Text("Failed to load heroes: \(error.localizedDescription)")
+                    
+                case .error(let message):
+                    Text("Error: \(message)")
+                }
+            }
+            .navigationTitle("Heroes")
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(viewModel: HeroViewModel(useCase: DefaultHeroUseCase(apiClient: URLSessionAPIClient())))
+    }
+}
+
+struct CircularProgressView: View {
+    var body: some View {
+        Circle()
+            .stroke( // 1
+                Color.pink.opacity(0.5),
+                lineWidth: 30
+            )
     }
 }

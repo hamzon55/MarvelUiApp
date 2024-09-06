@@ -1,17 +1,17 @@
 import Foundation
 /// Represents a single Marvel Series.
-public struct Character: Codable, Equatable {
+public struct Character: Identifiable, Codable, Equatable {
     
-    let id: Int
+    public let id: Int
     let name: String
     let description: String
-    let thumbnail: Thumbnail
+   // let thumbnail: Thumbnail
     
-    init(id: Int, name: String, description: String,  thumbnail: Thumbnail) {
+    init(id: Int, name: String, description: String) {
         self.id = id
         self.name = name
         self.description = description
-        self.thumbnail = thumbnail
+      //  self.thumbnail = thumbnail
     }
     
     var descriptionText: String {
