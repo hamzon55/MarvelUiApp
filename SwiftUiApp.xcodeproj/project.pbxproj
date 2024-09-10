@@ -20,6 +20,8 @@
 		203B2D7C2C7E11A700D78033 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2D7B2C7E11A700D78033 /* APIError.swift */; };
 		203B2D7E2C7E128900D78033 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2D7D2C7E128900D78033 /* APIClient.swift */; };
 		203B2D802C7E199100D78033 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2D7F2C7E199100D78033 /* ApiEndpoint.swift */; };
+		208E36952C9055DC0018DFB5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208E36942C9055DC0018DFB5 /* CircularProgressView.swift */; };
+		20A922E92C8F0F1100074666 /* HeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A922E82C8F0F1100074666 /* HeroImageView.swift */; };
 		20AE75E52C8B40690070467C /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE75E42C8B40690070467C /* ViewModelFactory.swift */; };
 		20AE75E92C8B417B0070467C /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE75E82C8B417B0070467C /* HeroCell.swift */; };
 		20CFB2582C87C7F700A08B66 /* MarvelEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFB2572C87C7F700A08B66 /* MarvelEndpoint.swift */; };
@@ -64,6 +66,8 @@
 		203B2D7B2C7E11A700D78033 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		203B2D7D2C7E128900D78033 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		203B2D7F2C7E199100D78033 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		208E36942C9055DC0018DFB5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		20A922E82C8F0F1100074666 /* HeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageView.swift; sourceTree = "<group>"; };
 		20AE75E32C8B3A6B0070467C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20AE75E42C8B40690070467C /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		20AE75E82C8B417B0070467C /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		203B2D442C7CAC4600D78033 /* SwiftUiApp */ = {
 			isa = PBXGroup;
 			children = (
+				208E36932C904BB20018DFB5 /* Common */,
 				20AE75E32C8B3A6B0070467C /* Info.plist */,
 				20CFB2632C87D5D400A08B66 /* Core */,
 				20CFB2592C87C83B00A08B66 /* MarvelConstants.swift */,
@@ -132,7 +137,6 @@
 				203B2D472C7CAC4600D78033 /* ContentView.swift */,
 				203B2D492C7CAC4900D78033 /* Assets.xcassets */,
 				203B2D4B2C7CAC4900D78033 /* Preview Content */,
-				20CFB25B2C87C8A500A08B66 /* String+Md5.swift */,
 				20AE75E42C8B40690070467C /* ViewModelFactory.swift */,
 			);
 			path = SwiftUiApp;
@@ -149,6 +153,7 @@
 		203B2D552C7CAC4A00D78033 /* SwiftUiAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				20A922E52C8F0B3D00074666 /* Mock */,
 				203B2D562C7CAC4A00D78033 /* SwiftUiAppTests.swift */,
 			);
 			path = SwiftUiAppTests;
@@ -175,6 +180,7 @@
 		203B2D702C7CAF2F00D78033 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				20A922E82C8F0F1100074666 /* HeroImageView.swift */,
 				203B2D752C7E088B00D78033 /* HeroeViewModel.swift */,
 				20CFB2612C87D5BC00A08B66 /* HeroeViewState.swift */,
 				20AE75E82C8B417B0070467C /* HeroCell.swift */,
@@ -192,6 +198,22 @@
 				20CFB2572C87C7F700A08B66 /* MarvelEndpoint.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		208E36932C904BB20018DFB5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20CFB25B2C87C8A500A08B66 /* String+Md5.swift */,
+				208E36942C9055DC0018DFB5 /* CircularProgressView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		20A922E52C8F0B3D00074666 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		20CFB2632C87D5D400A08B66 /* Core */ = {
@@ -341,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208E36952C9055DC0018DFB5 /* CircularProgressView.swift in Sources */,
 				203B2D7C2C7E11A700D78033 /* APIError.swift in Sources */,
 				20CFB25A2C87C83B00A08B66 /* MarvelConstants.swift in Sources */,
 				20CFB25E2C87C8E400A08B66 /* MarvelResponse.swift in Sources */,
@@ -348,6 +371,7 @@
 				20CFB2662C87D5EC00A08B66 /* HeroeUseCase.swift in Sources */,
 				203B2D482C7CAC4600D78033 /* ContentView.swift in Sources */,
 				203B2D462C7CAC4600D78033 /* SwiftUiApp.swift in Sources */,
+				20A922E92C8F0F1100074666 /* HeroImageView.swift in Sources */,
 				20AE75E92C8B417B0070467C /* HeroCell.swift in Sources */,
 				203B2D782C7E0A4400D78033 /* URLSessionAPIClient.swift in Sources */,
 				203B2D742C7E06A900D78033 /* Character.swift in Sources */,

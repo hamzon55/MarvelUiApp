@@ -2,8 +2,8 @@ import Foundation
 
 enum MarvelEndpoint: APIEndpoint {
     
-    case getHeroes(limit: Int)
-
+    case getHeroes(limit: Int,query: String?)
+    
     var baseURL: URL {
         return MarvelConstants.baseUrl
     }
@@ -37,8 +37,12 @@ enum MarvelEndpoint: APIEndpoint {
         ]
         
         switch self {
-        case let .getHeroes(limit):
+        case let .getHeroes(limit, query):
+            if let query = query, !query.isEmpty {
+                params["nameStartsWith"] = query
+            }
             params["limit"] = limit
+
         }
         
         return params.isEmpty ? nil : params

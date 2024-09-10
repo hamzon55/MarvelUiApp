@@ -5,18 +5,18 @@ import SwiftUI
 class HeroViewModel: ObservableObject, HeroesViewModelType {
     
     @Published var state: HeroViewState = .idle
-    private let heroUseCase: HeroUseCase
+    private let useCase: HeroUseCase
     private var cancellables = Set<AnyCancellable>()
     
     init(useCase: HeroUseCase) {
-        self.heroUseCase = useCase
+        self.useCase = useCase
     }
     
     func transform(input: HeroViewModelInput) -> HeroViewModelOuput {
         input.appear.flatMap { [weak self] _ -> AnyPublisher<HeroViewState, Never> in
             guard let self = self else { return Just(.idle).eraseToAnyPublisher() }
-
-            return self.heroUseCase.getHeroes()
+            
+            return self.useCase.fetchHeroes(query: nil)
                 .map { heroes in
                         .success(heroes.data.results)
                 }
@@ -29,19 +29,16 @@ class HeroViewModel: ObservableObject, HeroesViewModelType {
         .eraseToAnyPublisher()
     }
     
-    func fetchHeroes() {
+    func fetchHeroes(query: String?) {
         self.state = .idle
-        heroUseCase.getHeroes()
+        useCase.fetchHeroes(query: query)
             .map { heroes in
                     .success(heroes.data.results)
             }
             .catch { error in
                 Just(.failure(error))
             }
-            .receive(on: DispatchQueue.main) // Ensure UI updates happen on the main thread
-            .sink { [weak self] newState in
-                self?.state = newState
-            }
-            .store(in: &cancellables)
+            .receive(on: DispatchQueue.main) 
+            .assign(to: &$state)
     }
 }
