@@ -11,7 +11,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 switch viewModel.state {
                 case .idle:
                     ProgressView()
@@ -23,9 +22,10 @@ struct ContentView: View {
                     
                 case .success(let heroes):
                     List(heroes) { hero in
-                        HeroCell(hero: hero)
+                        NavigationLink(destination: HeroDetailView(hero: hero)) {
+                            HeroCell(hero: hero)
+                        }
                     }
-                    
                 case .failure(let error):
                     Text("Failed to load heroes: \(error.localizedDescription)")
                     

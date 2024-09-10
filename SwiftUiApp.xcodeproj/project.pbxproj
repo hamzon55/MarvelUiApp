@@ -30,6 +30,8 @@
 		20CFB25E2C87C8E400A08B66 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFB25D2C87C8E400A08B66 /* MarvelResponse.swift */; };
 		20CFB2622C87D5BC00A08B66 /* HeroeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFB2612C87D5BC00A08B66 /* HeroeViewState.swift */; };
 		20CFB2662C87D5EC00A08B66 /* HeroeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFB2652C87D5EC00A08B66 /* HeroeUseCase.swift */; };
+		20D46AA42C90795B00C726E6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 20D46AA32C90795B00C726E6 /* Kingfisher */; };
+		20D46AA82C9082D500C726E6 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D46AA72C9082D500C726E6 /* HeroDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,7 @@
 		20CFB25D2C87C8E400A08B66 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
 		20CFB2612C87D5BC00A08B66 /* HeroeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeViewState.swift; sourceTree = "<group>"; };
 		20CFB2652C87D5EC00A08B66 /* HeroeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeUseCase.swift; sourceTree = "<group>"; };
+		20D46AA72C9082D500C726E6 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D46AA42C90795B00C726E6 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 				203B2D492C7CAC4900D78033 /* Assets.xcassets */,
 				203B2D4B2C7CAC4900D78033 /* Preview Content */,
 				20AE75E42C8B40690070467C /* ViewModelFactory.swift */,
+				20D46AA72C9082D500C726E6 /* HeroDetailView.swift */,
 			);
 			path = SwiftUiApp;
 			sourceTree = "<group>";
@@ -249,6 +254,9 @@
 			dependencies = (
 			);
 			name = SwiftUiApp;
+			packageProductDependencies = (
+				20D46AA32C90795B00C726E6 /* Kingfisher */,
+			);
 			productName = SwiftUiApp;
 			productReference = 203B2D422C7CAC4600D78033 /* SwiftUiApp.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 203B2D392C7CAC4600D78033;
+			packageReferences = (
+				20D46AA22C90795B00C726E6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 203B2D432C7CAC4600D78033 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +388,7 @@
 				203B2D742C7E06A900D78033 /* Character.swift in Sources */,
 				20CFB25C2C87C8A500A08B66 /* String+Md5.swift in Sources */,
 				203B2D7E2C7E128900D78033 /* APIClient.swift in Sources */,
+				20D46AA82C9082D500C726E6 /* HeroDetailView.swift in Sources */,
 				203B2D762C7E088B00D78033 /* HeroeViewModel.swift in Sources */,
 				203B2D802C7E199100D78033 /* ApiEndpoint.swift in Sources */,
 				20CFB2622C87D5BC00A08B66 /* HeroeViewState.swift in Sources */,
@@ -705,6 +717,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20D46AA22C90795B00C726E6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20D46AA32C90795B00C726E6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20D46AA22C90795B00C726E6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 203B2D3A2C7CAC4600D78033 /* Project object */;
 }
