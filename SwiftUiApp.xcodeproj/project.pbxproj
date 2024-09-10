@@ -133,10 +133,9 @@
 			children = (
 				208E36932C904BB20018DFB5 /* Common */,
 				20AE75E32C8B3A6B0070467C /* Info.plist */,
-				20CFB2632C87D5D400A08B66 /* Core */,
+				20CFB2632C87D5D400A08B66 /* DomainLayer */,
 				20CFB2592C87C83B00A08B66 /* MarvelConstants.swift */,
 				203B2D702C7CAF2F00D78033 /* ViewModel */,
-				203B2D6F2C7CAF2700D78033 /* Model */,
 				203B2D452C7CAC4600D78033 /* SwiftUiApp.swift */,
 				203B2D472C7CAC4600D78033 /* ContentView.swift */,
 				203B2D492C7CAC4900D78033 /* Assets.xcassets */,
@@ -221,13 +220,14 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
-		20CFB2632C87D5D400A08B66 /* Core */ = {
+		20CFB2632C87D5D400A08B66 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				203B2D6F2C7CAF2700D78033 /* Model */,
 				20CFB2642C87D5DC00A08B66 /* UseCases */,
 				203B2D722C7E068D00D78033 /* NetworkLayer */,
 			);
-			path = Core;
+			path = DomainLayer;
 			sourceTree = "<group>";
 		};
 		20CFB2642C87D5DC00A08B66 /* UseCases */ = {

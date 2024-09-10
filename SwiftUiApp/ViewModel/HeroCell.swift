@@ -14,11 +14,11 @@ struct HeroCell: View {
                 Text(hero.description)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                    .lineLimit(2) 
+                    .lineLimit(3)
             }
-            .padding(.leading, 8)
+            .padding(.leading, 5)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 5)
     }
           }
 
