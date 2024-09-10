@@ -6,7 +6,6 @@ struct HeroCell: View {
     var body: some View {
         
         HStack(alignment: .center) {
-            // Use the refactored HeroImageView component
             HeroImageView(imageURL: "\(hero.thumbnail.path).\(hero.thumbnail.thumbnailExtension)")
             
             VStack(alignment: .leading) {

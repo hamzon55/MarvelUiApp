@@ -35,15 +35,14 @@ struct HeroDetailView: View {
                     .fontWeight(.bold)
                     .padding(.horizontal)
                 
-                
                 // Hero description
                 Text(hero.description.isEmpty ? "No description available." : hero.description)
                     .font(.body)
                     .padding(.horizontal)
                     .padding(.top, 10)
             }
-            .navigationTitle(hero.name)
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(hero.name) // Set the title of the NavigationView to the hero's name
+            .navigationBarTitleDisplayMode(.inline) // Display the title in a compact way
         }
     }
 }
