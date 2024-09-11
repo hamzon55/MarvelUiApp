@@ -12,7 +12,6 @@ class HeroViewModel: ObservableObject, HeroesViewModelType {
         self.useCase = useCase
     }
     
-    
     func transform(input: HeroViewModelInput) -> HeroViewModelOuput {
         cancellables.forEach { $0.cancel()}
         cancellables.removeAll()
@@ -49,13 +48,15 @@ class HeroViewModel: ObservableObject, HeroesViewModelType {
                     }
                     .eraseToAnyPublisher()
             }
+        
         // Merge the appear and search results, handle state updates
         return Publishers.Merge(onAppearResults, searchResults)
-            .handleEvents(receiveOutput: { [weak self] state in
-                self?.state = state // Updating the view state when new data is received
-            })
-            .eraseToAnyPublisher()
-    }
+                   .receive(on: DispatchQueue.main)
+                   .handleEvents(receiveOutput: { [weak self] state in
+                       self?.state = state
+                   })
+                   .eraseToAnyPublisher()
+           }
     
     func fetchHeroes(query: String?) {
         self.state = .idle
