@@ -6,7 +6,7 @@ struct HeroCell: View {
     var body: some View {
         
         HStack(alignment: .center) {
-            HeroImageView(imageURL: "\(hero.thumbnail.path).\(hero.thumbnail.thumbnailExtension)")
+            HeroImageView(imageURL: "\(hero.thumbnail.fullPath)")
             
             VStack(alignment: .leading) {
                 Text(hero.name)

@@ -131,13 +131,11 @@
 		203B2D442C7CAC4600D78033 /* SwiftUiApp */ = {
 			isa = PBXGroup;
 			children = (
+				2096F0F82C922FE6005CD569 /* View */,
+				203B2D702C7CAF2F00D78033 /* ViewModel */,
+				20CFB2632C87D5D400A08B66 /* DomainLayer */,
 				208E36932C904BB20018DFB5 /* Common */,
 				20AE75E32C8B3A6B0070467C /* Info.plist */,
-				20CFB2632C87D5D400A08B66 /* DomainLayer */,
-				20CFB2592C87C83B00A08B66 /* MarvelConstants.swift */,
-				203B2D702C7CAF2F00D78033 /* ViewModel */,
-				203B2D452C7CAC4600D78033 /* SwiftUiApp.swift */,
-				203B2D472C7CAC4600D78033 /* ContentView.swift */,
 				203B2D492C7CAC4900D78033 /* Assets.xcassets */,
 				203B2D4B2C7CAC4900D78033 /* Preview Content */,
 				20AE75E42C8B40690070467C /* ViewModelFactory.swift */,
@@ -207,10 +205,20 @@
 		208E36932C904BB20018DFB5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				20CFB2592C87C83B00A08B66 /* MarvelConstants.swift */,
 				20CFB25B2C87C8A500A08B66 /* String+Md5.swift */,
 				208E36942C9055DC0018DFB5 /* CircularProgressView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		2096F0F82C922FE6005CD569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				203B2D452C7CAC4600D78033 /* SwiftUiApp.swift */,
+				203B2D472C7CAC4600D78033 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		20A922E52C8F0B3D00074666 /* Mock */ = {

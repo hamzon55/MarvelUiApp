@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 // MARK: - UseCase
 
@@ -27,7 +28,15 @@ final class DefaultHeroUseCase: HeroUseCase {
 
     func fetchHeroes(query: String?) -> AnyPublisher<MarvelResponse, APIError> {
         apiClient.request(MarvelEndpoint.getHeroes(limit: Constants.limit, query: query))
-            .mapError { _ in APIError.invalidResponse }
-                       .eraseToAnyPublisher()
+            .mapError { error in
+                if let urlError = error as? URLError {
+                    return .networkError(urlError)
+                } else if let decodingError = error as? DecodingError {
+                    return .decodingError(decodingError)
+                } else {
+                    return .invalidResponse
+                }
+            }
+            .eraseToAnyPublisher()
     }
 }

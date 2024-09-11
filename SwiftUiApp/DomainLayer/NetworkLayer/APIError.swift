@@ -1,19 +1,6 @@
+import Foundation
 enum APIError: Error {
-    case badURL
-    case requestFailed
+    case networkError(URLError)
+    case decodingError(DecodingError)
     case invalidResponse
-    case decodingFailed
-    var errorDescription: String? {
-        switch self {
-        case .requestFailed:
-            return "Server is not reachable"
-        case .badURL:
-            return "Not a valid URL"
-        case .decodingFailed:
-            return "Json failed"
-        case .invalidResponse:
-            return "Response type not a json"
-        }
-    }
 }
-

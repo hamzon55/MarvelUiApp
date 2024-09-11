@@ -1,4 +1,4 @@
-class ViewModelFactory {
+final class ViewModelFactory {
     
     private let apiClient: URLSessionAPIClient<MarvelEndpoint>
     
