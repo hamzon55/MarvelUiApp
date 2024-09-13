@@ -112,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				203B2D442C7CAC4600D78033 /* MarvelUiApp */,
-				203B2D552C7CAC4A00D78033 /* SwiftUiAppTests */,
-				203B2D5F2C7CAC4A00D78033 /* SwiftUiAppUITests */,
+				203B2D552C7CAC4A00D78033 /* MarvelUiAppTests */,
+				203B2D5F2C7CAC4A00D78033 /* MarvelUiAppUITests */,
 				203B2D432C7CAC4600D78033 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,22 +152,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		203B2D552C7CAC4A00D78033 /* SwiftUiAppTests */ = {
+		203B2D552C7CAC4A00D78033 /* MarvelUiAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				20A922E52C8F0B3D00074666 /* Mock */,
 				203B2D562C7CAC4A00D78033 /* SwiftUiAppTests.swift */,
 			);
-			path = SwiftUiAppTests;
+			path = MarvelUiAppTests;
 			sourceTree = "<group>";
 		};
-		203B2D5F2C7CAC4A00D78033 /* SwiftUiAppUITests */ = {
+		203B2D5F2C7CAC4A00D78033 /* MarvelUiAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				203B2D602C7CAC4A00D78033 /* SwiftUiAppUITests.swift */,
 				203B2D622C7CAC4A00D78033 /* SwiftUiAppUITestsLaunchTests.swift */,
 			);
-			path = SwiftUiAppUITests;
+			path = MarvelUiAppUITests;
 			sourceTree = "<group>";
 		};
 		203B2D6F2C7CAF2700D78033 /* Model */ = {
