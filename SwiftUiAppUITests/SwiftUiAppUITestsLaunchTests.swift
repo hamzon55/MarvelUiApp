@@ -1,13 +1,13 @@
 //
-//  SwiftUiAppUITestsLaunchTests.swift
-//  SwiftUiAppUITests
+//  MarvelUiAppUITestsLaunchTests.swift
+//  MarvelUiAppUITests
 //
 //  Created by Hamza Jerbi on 26/8/24.
 //
 
 import XCTest
 
-final class SwiftUiAppUITestsLaunchTests: XCTestCase {
+final class MarvelUiAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

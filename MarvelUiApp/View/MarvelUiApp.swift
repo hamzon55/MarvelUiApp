@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SwiftUiApp: App {
+struct MarvelUiApp: App {
     private let factory = ViewModelFactory()
 
     var body: some Scene {
