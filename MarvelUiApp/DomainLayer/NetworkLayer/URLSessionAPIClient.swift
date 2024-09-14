@@ -3,9 +3,9 @@ import Combine
 
 
 class URLSessionAPIClient<EndpointType: APIEndpoint>: APIClient {
-    
+    //Properties
     private let session: URLSession
-    
+    // Initializers
     init(session: URLSession = .shared) {
         self.session = session
     }

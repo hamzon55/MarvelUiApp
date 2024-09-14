@@ -1,42 +1,31 @@
 import SwiftUI
-
-import SwiftUI
+import Kingfisher
 
 struct HeroDetailView: View {
-    let hero: Character // The hero object passed to this view
+    let hero: Character
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                // Display hero image
-                AsyncImage(url: URL(string: "\(hero.thumbnail.path).\(hero.thumbnail.thumbnailExtension)")) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 400, height: 300, alignment: .center)
-                            .cornerRadius(10)
-                    } else if phase.error != nil {
-                        Image(systemName: "xmark.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 300)
-                            .foregroundColor(.red)
-                    } else {
+                KFImage(URL(string: "\(hero.thumbnail.fullPath)"))
+                    .placeholder {
                         ProgressView()
                             .frame(width: 400, height: 300)
                     }
-                }
-                .padding()
+                    .cancelOnDisappear(true)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 400, height: 300, alignment: .center)
+                    .cornerRadius(10)
+                    .padding()
                 
-                // Hero name
                 Text(hero.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.horizontal)
                     .padding(.leading, 10)
                     .padding(.trailing, 10)
-
+                
                 Text(hero.description.isEmpty ? "No description available." : hero.description)
                     .font(.body)
                     .padding(.horizontal)
@@ -45,7 +34,7 @@ struct HeroDetailView: View {
                     .padding(.trailing, 10)
             }
             .navigationTitle(hero.name)
-            .navigationBarTitleDisplayMode(.inline) 
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
