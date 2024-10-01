@@ -7,8 +7,8 @@ struct HeroDetailView: View {
     private let appear = PassthroughSubject<Void, Never>()
     @State private var cancellables = Set<AnyCancellable>()
     
-    init(heroItem: Character) {
-        _viewModel = StateObject(wrappedValue: HeroDetailViewModel(heroItem: heroItem))
+    init(heroItem: Character, factory : ViewModelFactory) {
+        _viewModel = StateObject(wrappedValue: factory.createHeroDetailViewModel(heroItem: heroItem))
     }
     
     var body: some View {

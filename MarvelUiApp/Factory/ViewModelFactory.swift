@@ -10,5 +10,8 @@ final class ViewModelFactory {
         let heroUseCase = DefaultHeroUseCase(apiClient: apiClient)
         return HeroViewModel(useCase: heroUseCase)
     }
+    func createHeroDetailViewModel(heroItem: Character) -> HeroDetailViewModel {
+           return HeroDetailViewModel(heroItem: heroItem)
+       }
 }
     

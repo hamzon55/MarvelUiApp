@@ -5,12 +5,14 @@ struct ContentView: View {
     @StateObject private var viewModel: HeroViewModel
     @State private var searchText = ""
     @State private var cancellables = Set<AnyCancellable>()
+    private let factory: ViewModelFactory
 
     private let onSearchPublisher = PassthroughSubject<String, Never>()
     private let onAppearPublisher = PassthroughSubject<Void,Never>()
     
-    init(viewModel: HeroViewModel) {
+    init(viewModel: HeroViewModel, factory: ViewModelFactory) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.factory = factory
     }
     
     var body: some View {
@@ -28,7 +30,7 @@ struct ContentView: View {
                     
                 case .success(let heroes):
                     List(heroes) { hero in
-                        NavigationLink(destination: HeroDetailView(heroItem: hero)) {
+                        NavigationLink(destination: HeroDetailView(heroItem: hero, factory: factory)) {
                             HeroCell(hero: hero)
                         }
                     }
@@ -60,7 +62,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: HeroViewModel(useCase: DefaultHeroUseCase(apiClient: URLSessionAPIClient())))
+        let factory = ViewModelFactory()
+
+        ContentView(viewModel: HeroViewModel(useCase: DefaultHeroUseCase(apiClient: URLSessionAPIClient())), factory: factory)
     }
 }
 
