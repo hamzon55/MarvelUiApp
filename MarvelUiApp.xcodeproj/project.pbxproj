@@ -25,6 +25,7 @@
 		20A922E92C8F0F1100074666 /* HeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A922E82C8F0F1100074666 /* HeroImageView.swift */; };
 		20AB7AF12CA9F5DA00753804 /* HeroDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AB7AF02CA9F5DA00753804 /* HeroDetailViewState.swift */; };
 		20AB7AF32CA9F5E200753804 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AB7AF22CA9F5E200753804 /* HeroDetailViewModel.swift */; };
+		20AB7AF62CAC17B700753804 /* HeroUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AB7AF52CAC17B700753804 /* HeroUiView.swift */; };
 		20AE75E52C8B40690070467C /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE75E42C8B40690070467C /* ViewModelFactory.swift */; };
 		20AE75E92C8B417B0070467C /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE75E82C8B417B0070467C /* HeroCell.swift */; };
 		20CFB2582C87C7F700A08B66 /* MarvelEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFB2572C87C7F700A08B66 /* MarvelEndpoint.swift */; };
@@ -76,6 +77,7 @@
 		20A922E82C8F0F1100074666 /* HeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageView.swift; sourceTree = "<group>"; };
 		20AB7AF02CA9F5DA00753804 /* HeroDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewState.swift; sourceTree = "<group>"; };
 		20AB7AF22CA9F5E200753804 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
+		20AB7AF52CAC17B700753804 /* HeroUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroUiView.swift; sourceTree = "<group>"; };
 		20AE75E32C8B3A6B0070467C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20AE75E42C8B40690070467C /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		20AE75E82C8B417B0070467C /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		2074E1282C946D2700150463 /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
+				20AB7AF42CAC179600753804 /* View */,
 				20D46AA72C9082D500C726E6 /* HeroDetailView.swift */,
 				20AB7AF02CA9F5DA00753804 /* HeroDetailViewState.swift */,
 				20AB7AF22CA9F5E200753804 /* HeroDetailViewModel.swift */,
@@ -251,6 +254,14 @@
 				20A629992C947966009EBCFF /* MockAPIClient.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		20AB7AF42CAC179600753804 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20AB7AF52CAC17B700753804 /* HeroUiView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		20CFB2632C87D5D400A08B66 /* DomainLayer */ = {
@@ -410,6 +421,7 @@
 				208E36952C9055DC0018DFB5 /* CircularProgressView.swift in Sources */,
 				203B2D7C2C7E11A700D78033 /* APIError.swift in Sources */,
 				20CFB25A2C87C83B00A08B66 /* MarvelConstants.swift in Sources */,
+				20AB7AF62CAC17B700753804 /* HeroUiView.swift in Sources */,
 				20CFB25E2C87C8E400A08B66 /* MarvelResponse.swift in Sources */,
 				20AE75E52C8B40690070467C /* ViewModelFactory.swift in Sources */,
 				20CFB2662C87D5EC00A08B66 /* HeroeUseCase.swift in Sources */,
