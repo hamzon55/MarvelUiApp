@@ -38,7 +38,7 @@ struct ContentView: View {
                     Text("Failed to load heroes: \(error.localizedDescription)")
                 }
             }
-            .navigationTitle("Heroes")
+            .navigationTitle(HeroText.HeroTab)
             .onAppear {
                 
                 let input = HeroViewModelInput(

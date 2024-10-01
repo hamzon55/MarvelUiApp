@@ -5,7 +5,7 @@ import Foundation
 
 /// Protocol specifying the task to retrieve heroes.
 protocol HeroUseCase {
-    func fetchHeroes(query: String?)  -> AnyPublisher<MarvelResponse, APIError>
+    func fetchHeroes(query: String?)  -> AnyPublisher<MarvelResponse, Error>
 
 }
 
@@ -26,17 +26,7 @@ final class DefaultHeroUseCase: HeroUseCase {
     /// Retrieves heroes based on the provided query.
     /// - Returns: A publisher emitting `MarvelResponse` or a `HeroUseCaseError` if an error occurs.
 
-    func fetchHeroes(query: String?) -> AnyPublisher<MarvelResponse, APIError> {
+    func fetchHeroes(query: String?) -> AnyPublisher<MarvelResponse, Error> {
         apiClient.request(MarvelEndpoint.getHeroes(limit: Constants.limit, query: query))
-            .mapError { error in
-                if let urlError = error as? URLError {
-                    return .networkError(urlError)
-                } else if let decodingError = error as? DecodingError {
-                    return .decodingError(decodingError)
-                } else {
-                    return .invalidResponse
-                }
-            }
-            .eraseToAnyPublisher()
     }
 }

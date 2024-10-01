@@ -28,7 +28,7 @@ struct HeroDetailView: View {
     private var content: some View {
         switch viewModel.state {
         case .idle:
-            ProgressView("Loading...")
+            ProgressView(HeroText.loading)
                 .onAppear {
                     appear.send(())
                 }

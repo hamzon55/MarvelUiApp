@@ -9,11 +9,11 @@ struct TabBarview: View {
         TabView {
             ContentView(viewModel: factory.createHeroViewModel(), factory: factory)
                 .tabItem{
-                    Label("Heroes", systemImage: "list.dash")
+                    Label(HeroText.HeroTab, systemImage: "list.dash")
                 }
             ContentView(viewModel: factory.createHeroViewModel(), factory: factory)
                 .tabItem{
-                    Label("Favorites", systemImage: "star.fill")
+                    Label(HeroText.favTab, systemImage: "star.fill")
                 }
         }
     }

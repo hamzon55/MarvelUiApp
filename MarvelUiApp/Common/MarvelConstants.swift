@@ -14,3 +14,12 @@ struct MarvelConstants {
         return "\(timestamp)\(privateKey)\(publicKey)".MD5()
     }
 }
+
+struct HeroText {
+   
+    static let loading = "Loading"
+    static let HeroTab = "Heroes"
+    static let favTab = "Favorites"
+
+ 
+}
