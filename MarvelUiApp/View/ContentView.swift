@@ -34,9 +34,6 @@ struct ContentView: View {
                     }
                 case .failure(let error):
                     Text("Failed to load heroes: \(error.localizedDescription)")
-                    
-                case .error(let message):
-                    Text("Error: \(message)")
                 }
             }
             .navigationTitle("Heroes")

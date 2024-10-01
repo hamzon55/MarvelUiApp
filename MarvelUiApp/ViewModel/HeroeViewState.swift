@@ -9,7 +9,6 @@ enum HeroViewState {
     case idle
     case success([Character])
     case failure(Error)
-    case error(String)
 }
 
 extension HeroViewState: Equatable {

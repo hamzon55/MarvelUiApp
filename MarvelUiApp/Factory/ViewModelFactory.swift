@@ -11,3 +11,4 @@ final class ViewModelFactory {
         return HeroViewModel(useCase: heroUseCase)
     }
 }
+    
