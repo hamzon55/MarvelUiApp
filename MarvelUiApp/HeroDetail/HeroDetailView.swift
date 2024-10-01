@@ -1,52 +1,44 @@
 import SwiftUI
-import Kingfisher
+import Combine
 
 struct HeroDetailView: View {
-    let hero: Character
+    
+    @StateObject private var viewModel: HeroDetailViewModel
+    private let appear = PassthroughSubject<Void, Never>()
+    @State private var cancellables = Set<AnyCancellable>()
+    
+    init(heroItem: Character) {
+        _viewModel = StateObject(wrappedValue: HeroDetailViewModel(heroItem: heroItem))
+    }
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                KFImage(URL(string: "\(hero.thumbnail.fullPath)"))
-                    .placeholder {
-                        ProgressView()
-                            .frame(width: 400, height: 300)
+        content
+            .onAppear {
+                let input = HeroDetailViewModelInput(appear: appear.eraseToAnyPublisher())
+                let output = viewModel.transform(input: input)
+                output
+                    .sink { state in
                     }
-                    .cancelOnDisappear(true)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 400, height: 300, alignment: .center)
-                    .cornerRadius(10)
-                    .padding()
-                
-                Text(hero.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
-                
-                Text(hero.description.isEmpty ? "No description available." : hero.description)
-                    .font(.body)
-                    .padding(.horizontal)
-                    .padding(.top, 10)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
+                    .store(in: &cancellables)
+                appear.send(())
             }
-            .navigationTitle(hero.name)
-            .navigationBarTitleDisplayMode(.inline)
-        }
     }
-}
-
-// Preview
-struct HeroDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeroDetailView(hero: Character(
-            id: 1,
-            name: "Spider-Man",
-            description: "A hero with spider-like abilities.",
-            thumbnail: Thumbnail(path: "https://example.com/spiderman", thumbnailExtension: "jpg")
-        ))
+    
+    @ViewBuilder
+    private var content: some View {
+        switch viewModel.state {
+        case .idle:
+            ProgressView("Loading...")
+                .onAppear {
+                    appear.send(())
+                }
+        case .success(let character):
+            HeroUiView(hero: character)
+        case .error(let message):
+            Text("Error: \(message)")
+                .foregroundColor(.red)
+                .multilineTextAlignment(.center)
+                .padding()
+        }
     }
 }

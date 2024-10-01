@@ -28,7 +28,7 @@ struct ContentView: View {
                     
                 case .success(let heroes):
                     List(heroes) { hero in
-                        NavigationLink(destination: HeroDetailView(hero: hero)) {
+                        NavigationLink(destination: HeroDetailView(heroItem: hero)) {
                             HeroCell(hero: hero)
                         }
                     }
